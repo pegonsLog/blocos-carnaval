@@ -23,6 +23,7 @@ export class BlocosListUserComponent implements OnInit, OnDestroy {
   regional: string = 'GERAL';
   contador: number = 0;
   bloco: any;
+  linkdesvios: string = "https://desvioscarnaval-2023-bhtrans.web.app/";
   itemsRef: AngularFireList<any>;
 
   constructor(
@@ -126,5 +127,8 @@ export class BlocosListUserComponent implements OnInit, OnDestroy {
     this.blocosService.listFire().subscribe((x: any) => (this.blocosFire$ = x));
   }
 
+  desvios(){
+    window.open(this.linkdesvios, '_blank');
+  }
 
 }

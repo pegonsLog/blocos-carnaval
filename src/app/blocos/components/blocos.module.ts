@@ -8,10 +8,11 @@ import { BlocosListDateComponent } from './blocos-list-date/blocos-list-date.com
 import { BlocosListUserComponent } from './blocos-list-user/blocos-list-user.component';
 import { ComponentsRoutingModule } from './blocos-routing.module';
 import { BlocosListDateRegionalComponent } from './blocos-list-date-regional/blocos-list-date-regional.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [BlocosListAdmComponent, DetailsComponent, BlocosListUserComponent, BlocosListDateComponent, BlocosListDateRegionalComponent],
-  imports: [CommonModule, ComponentsRoutingModule, AngularMaterialModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, ComponentsRoutingModule, AngularMaterialModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [BlocosListAdmComponent, DetailsComponent, BlocosListUserComponent, BlocosListDateComponent, BlocosListDateRegionalComponent],
 })
 export class BlocosModule {}
