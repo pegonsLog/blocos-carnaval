@@ -12,11 +12,6 @@ const routes: Routes = [
         (m) => m.BlocosModule
       ),
   },
-  {
-    path: 'desvios',
-    loadChildren: () =>
-      import('src/app/desvios/desvios.module').then((m) => m.DesviosModule),
-  },
 ];
 
 @NgModule({

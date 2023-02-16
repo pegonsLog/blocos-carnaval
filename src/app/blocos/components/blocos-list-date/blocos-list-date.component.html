@@ -1,9 +1,9 @@
 <mat-card class="mat-elevation-z8">
   <mat-toolbar color="primary" id="peso-fonte">
-    <span>CARNAVAL 2023 - Datas dos Desfiles</span>
+    <span>CARNAVAL 2023 - DATAS</span>
   </mat-toolbar>
   <div class="toolbar-regionais">
-    <mat-grid-list cols="4" rowHeight="5:2">
+    <mat-grid-list cols="4" rowHeight="3:2">
       <mat-grid-tile *ngFor="let data of datas">
         <button mat-button (click)="forDate(data)">
           {{ data }}
