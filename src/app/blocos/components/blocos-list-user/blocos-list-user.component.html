@@ -1,0 +1,105 @@
+<mat-card class="mat-elevation-z8 center-card">
+  <mat-toolbar color="primary" id="peso-fonte">
+    <span class="title">CARNAVAL 2023 - DOT'S e Croquis</span>
+  </mat-toolbar>
+  <mat-grid-list cols="2" rowHeight="10:2" style="margin-bottom: 2px">
+    <mat-grid-tile
+      class="regionais"
+      [colspan]="1"
+      *ngFor="let regional of regionais"
+    >
+      <button mat-button class="montserrat" (click)="forByRegional(regional)">
+        {{ regional }}
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list class="informacoes" cols="2" rowHeight="10:2">
+    <mat-grid-tile [colspan]="1" id="teste">
+      <button mat-button class="montserrat" (click)="load()">GERAL</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" id="teste">
+      <button
+        mat-button
+        class="montserrat"
+        style="color: #b34646; font-weight: 400"
+        (click)="forDate()"
+      >
+        POR DATA
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list class="informacoes" cols="4" rowHeight="5:2">
+    <mat-grid-tile [colspan]="2" id="teste">
+      <span class="montserrat"
+        >REG:<span id="red">{{ regional }}</span></span
+      >
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" id="teste">
+      <span class="montserrat"
+        >QTE: <span id="red">{{ contador }}</span></span
+      >
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" id="teste">
+      <button id="desvio" mat-button>DESVIOS</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list class="pesquisar" cols="4" rowHeight="5:2">
+    <mat-grid-tile [colspan]="2">
+      <mat-form-field id="input-esquerda">
+        <mat-label>Buscar bloco pelo nome...</mat-label>
+        <input
+          matInput
+          type="text"
+          id="myTable"
+          class="form-control"
+          [formControl]="queryField"
+        />
+        <button
+          *ngIf="value"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="value = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" class="regionais">
+      <button mat-button class="montserrat" (click)="onSearch()">Buscar</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" class="regionais">
+      <button mat-button class="montserrat" (click)="load()">Limpar</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div class="container">
+    <div *ngIf="blocosFire$ | async; else loading">
+      <div *ngFor="let bloco of blocosFire$ | async as Blocos">
+        <div class="link">
+          <div>
+            <a class="montserrat" href="{{ bloco.linkMyMaps }}" target="_blank">
+              {{ bloco.nome }}
+            </a>
+            <span id="regional" class="montserrat">
+              - ({{ bloco.regional }})</span
+            >
+          </div>
+
+          <button mat-button (click)="findOne(bloco.key)">
+            <span style="font-size: 20px" class="material-symbols-outlined">
+              theater_comedy
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading>
+    <div id="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</mat-card>

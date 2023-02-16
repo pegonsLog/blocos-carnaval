@@ -1,0 +1,120 @@
+@media (mix-width: 600px) {
+  mat-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1000px) and (max-width: 2000px) {
+  mat-card {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
+
+.toolbar-regionais {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.title-size {
+  font-size: x-large;
+}
+
+.link {
+  background: lightblue;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  height: 40px;
+  color: teal;
+  align-items: center;
+}
+
+mat-label {
+  color: #cccccc;
+}
+
+span {
+  color: white;
+}
+
+mat-grid-tile {
+  color: teal;
+  background: lightblue;
+}
+
+button {
+  color: teal;
+  font-size: 12px;
+}
+
+.container {
+  height: 300px;
+  overflow: auto;
+}
+
+.pesquisar {
+  margin: auto;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+mat-form-field {
+  padding-top: 20px;
+  width: 70%;
+}
+
+.montserrat {
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+
+#red {
+  margin-left: 10px;
+  font-weight: 500;
+  color: #b34646;
+}
+#peso-fonte {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+#peso-fonte-plus {
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+.button-details {
+  background: lightblue;
+  border: none;
+}
+mat-toolbar {
+  margin-bottom: 5px;
+}
+#registros {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+#voltar {
+  width: 120px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: white;
+}

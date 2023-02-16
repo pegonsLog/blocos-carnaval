@@ -1,0 +1,67 @@
+<mat-card>
+  <mat-toolbar color="primary">Detalhes do bloco</mat-toolbar>
+  <mat-card-content>
+    <div class="container">
+      <div style="margin-bottom: 15px; margin-top: 20px;"
+        ><strong> Nome do Bloco: </strong
+        ><span>{{ bloco.nome }}.</span></div
+      >
+      <div style="margin-bottom: 15px"
+        ><strong>Data do Desfile: </strong>
+        <span>{{ bloco.data }}.</span></div
+      >
+      <div style="margin-bottom: 15px"
+        ><strong>Público: </strong
+        ><span>{{ bloco.publico }}.</span></div
+      >
+      <div style="margin-bottom: 15px"
+        ><strong>Hora da Concentração: </strong>
+        <span>{{ bloco.horaConc }}.</span></div
+      >
+      <div style="margin-bottom: 15px"
+        ><strong>Hora do Desfile: </strong>
+        <span>{{ bloco.horaDesf }}.</span></div
+      >
+      <div style="margin-bottom: 15px"
+        ><strong>Hora de Dispersão: </strong>
+        <span>{{ bloco.horaDisp }}.</span></div
+      >
+      <div style="margin-bottom: 30px"
+        ><strong>Local de Concentração: </strong>
+        <span>{{ bloco.localConc }}.</span></div
+      >
+      <div style="margin-bottom: 30px"
+        ><strong>Trajeto do Desfile: </strong>
+        <span>{{ "PARA CONSULTAR, ABRA O DOT" }}.</span></div
+      >
+      <div style="margin-bottom: 30px"
+        ><strong>Local de Dispersão: </strong>
+        <span>{{ bloco.localDisp }}.</span></div
+      >
+      <div style="margin-bottom: 10px"
+        ><strong>Responsável: </strong>
+        <span>{{ bloco.responsavel }}.</span></div
+      >
+      <div style="margin-bottom: 10px"
+        ><strong>Telefone: </strong
+        ><span>{{ bloco.telefone }}.</span></div
+      >
+    </div>
+    <mat-card-actions>
+      <button *ngIf="bloco.linkMyMaps; else deactiveButton" class="button-hover montserrat" mat-raised-button color="primary">
+        <a href="{{ bloco.linkMyMaps }}" target="_blank"> Abrir MyMaps</a>
+      </button>
+    <ng-template #deactiveButton>
+      <!-- <button class="button-hover montserrat" mat-raised-button color="primary">
+        <a href="{{ bloco.linkMyMaps }}" target="_blank"> Abrir MyMaps</a>
+      </button> -->
+    </ng-template>
+      <button class="button-hover montserrat" mat-raised-button color="primary">
+        <a href="{{ bloco.linkDOT }}" target="_blank"> Abrir DOT</a>
+      </button>
+      <button class="montserrat" mat-raised-button (click)="onCancel()">
+        Voltar
+      </button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

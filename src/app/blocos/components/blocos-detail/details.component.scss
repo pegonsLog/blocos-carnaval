@@ -1,0 +1,46 @@
+@media (mix-width: 600px) {
+  mat-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 600px) and (max-width: 2000px) {
+  mat-card {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-card-actions {
+  margin: auto;
+  margin-top: 20px;
+}
+
+mat-toolbar,
+button {
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+mat-list-item {
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+span {
+  font-size: 12px;
+}
+.button-hover {
+  transition: 0.5;
+}
+.button-hover:hover {
+  background-color: #0a10cf;
+}
+strong {
+  margin-right: 10px;
+}
+

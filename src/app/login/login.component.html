@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-toolbar color="primary" id="peso-fonte">LOGIN</mat-toolbar>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Usuário" formControlName="user" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Senha" formControlName="password" />
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button
+          type="submit"
+          mat-raised-button
+          class="montserrat"
+          color="primary"
+        >
+          Entrar
+        </button>
+        <button
+          type="button"
+          mat-raised-button
+          class="montserrat"
+          (click)="clear()"
+        >
+          Limpar
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,98 @@
+<mat-card>
+  <mat-toolbar color="primary" id="peso-fonte">{{nomeFormulario}} BLOCO</mat-toolbar>
+  <mat-card-content>
+    <form [formGroup]="form" class="min-width">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome do bloco" formControlName="nome" />
+      </mat-form-field>
+      <div id="linha-dois">
+        <mat-form-field id="largura-data">
+          <input matInput placeholder="Data" formControlName="data" />
+        </mat-form-field>
+        <mat-form-field id="largura-publico">
+          <input matInput placeholder="Público" formControlName="publico" />
+        </mat-form-field>
+        <mat-form-field id="responsavel">
+          <input
+          matInput
+          placeholder="Nome do responsável"
+          formControlName="responsavel"
+          />
+        </mat-form-field>
+        <mat-form-field id="tel-responsavel" >
+          <input
+          matInput
+          placeholder="Tel. responsável"
+          formControlName="telefone"
+          />
+        </mat-form-field>
+      </div>
+      <div class="three-parts-width">
+        <mat-form-field class="espacamento-desfile">
+          <input
+            matInput
+            placeholder="Hora da concentração"
+            formControlName="horaConc"
+          />
+        </mat-form-field>
+        <mat-form-field class="espacamento-desfile">
+          <input
+            matInput
+            placeholder="Hora do desfile"
+            formControlName="horaDesf"
+          />
+        </mat-form-field>
+        <mat-form-field class="espacamento-desfile">
+          <input
+            matInput
+            placeholder="Hora da dispersão"
+            formControlName="horaDisp"
+          />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Local da concentração"
+          formControlName="localConc"
+        />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Local da dispersão"
+          formControlName="localDisp"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Regional" formControlName="regional" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Link do DOT" formControlName="linkDOT" />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Link do My Maps"
+          formControlName="linkMyMaps"
+        />
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          class="montserrat"
+          color="primary"
+          (click)="onSubmit()"
+        >
+          Salvar
+        </button>
+        <button mat-raised-button class="montserrat" (click)="onCancel()">
+          Voltar
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

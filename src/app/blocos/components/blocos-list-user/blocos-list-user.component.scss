@@ -1,0 +1,184 @@
+@media screen and (mix-width: 0px) and (max-width: 800px) {
+  mat-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .regionais {
+    color: teal;
+    background: lightblue;
+    margin-bottom: 2px;
+    display: inline-block;
+  }
+  .informacoes {
+    color: teal;
+    background: lightblue;
+    margin-bottom: 2px;
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 800px) and (max-width: 1000px) {
+  mat-card {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .regionais {
+    color: teal;
+    background: lightblue;
+    display: inline-block;
+  }
+}
+@media (min-width: 1000px) and (max-width: 2000px) {
+  mat-card {
+    width: 40%;
+    margin: 0 auto;
+  }
+  .regionais {
+    color: teal;
+    background: lightblue;
+    display: inline-block;
+  }
+}
+
+a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.title-size {
+  font-size: 1.2rem;
+}
+
+.link {
+  background: lightblue;
+  margin-bottom: 5px;
+  height: 38px;
+  color: teal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+mat-label {
+  color: #7d7c7c;
+}
+
+span {
+  color: teal;
+}
+
+.regionais {
+  color: teal;
+  background: lightblue;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  color: teal;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: right;
+}
+
+.container {
+  height: 300px;
+  overflow: auto;
+}
+
+.pesquisar {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 0.75rem;
+}
+
+mat-form-field {
+  padding-top: 15px;
+  margin-top: 5px;
+  width: 90%;
+}
+
+.montserrat {
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+
+#red {
+  margin-left: 10px;
+  font-weight: 500;
+  color: #b34646;
+  font-size: 0.75rem;
+}
+#peso-fonte {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+#peso-fonte-plus {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #fff;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+.button-details {
+  background-color: lightblue;
+  border: none;
+}
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+#button-hover {
+  transition: 0.5;
+  border-radius: 5%;
+  background-color: lightblue;
+  width: 9em;
+  font-size: 0.8rem;
+}
+#button-hover:hover {
+  background-color: lightblue;
+}
+
+.title {
+  color: white;
+}
+.center-card {
+  justify-content: center;
+  align-items: center;
+}
+
+#teste {
+  background-color: lightblue;
+}
+.informacoes {
+  color: teal;
+  margin-bottom: 2px;
+}
+#borda-direita {
+  border-right: 2px solid white;
+}
+
+#botoes {
+  display: flex;
+  justify-content: right;
+}
+
+#loading-spinner {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.15);
+}
+#desvio {
+  font-weight: 500;
+  color: #0306ba;
+  background-color: lightblue;
+}

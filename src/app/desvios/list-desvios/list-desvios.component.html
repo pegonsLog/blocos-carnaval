@@ -1,0 +1,54 @@
+<mat-card class="mat-elevation-z8 center-card">
+  <mat-toolbar color="primary" id="peso-fonte">
+    <span class="title">CARNAVAL 2023 - Desvios do TC</span>
+  </mat-toolbar>
+
+  <mat-grid-list class="pesquisar" cols="4" rowHeight="5:2">
+    <mat-grid-tile [colspan]="2">
+      <mat-form-field id="input-esquerda">
+        <mat-label>Buscar linha...</mat-label>
+        <input
+          matInput
+          type="text"
+          id="myTable"
+          class="form-control"
+          [formControl]="queryField"
+        />
+        <button
+          *ngIf="value"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="value = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" class="regionais">
+      <button mat-button class="montserrat" (click)="onSearch()">Buscar</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" class="regionais">
+      <button mat-button class="montserrat" (click)="load()">Limpar</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div class="container">
+    <div *ngIf="desviosFire$ | async; else loading">
+      <div *ngFor="let desvio of desviosFire$ | async as Blocos">
+        <div class="link">
+          <div>
+            <a class="montserrat" href="{{ desvio.link }}" target="_blank">
+              {{ desvio.linha }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading>
+    <div id="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</mat-card>

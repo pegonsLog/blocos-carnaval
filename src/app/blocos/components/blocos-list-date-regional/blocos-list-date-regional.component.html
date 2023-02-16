@@ -1,0 +1,69 @@
+<mat-card class="mat-elevation-z8">
+  <mat-toolbar color="primary" id="peso-fonte">
+    <span class="title">CARNAVAL 2023 - DOT'S e Croquis</span>
+  </mat-toolbar>
+
+  <mat-grid-list cols="2" rowHeight="8:2">
+    <mat-grid-tile
+      class="regionais"
+      [colspan]="1"
+      *ngFor="let regional of regionais"
+    >
+      <button mat-button class="montserrat" (click)="forByRegional(regional)">
+        {{ regional }}
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div>
+    <mat-grid-list class="geral" cols="4" rowHeight="5:2">
+      <mat-grid-tile [colspan]="2">
+        <span class="montserrat"> DATA: </span><span id="red">{{ data }}</span>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1">
+        <span class="montserrat"
+          >QTE: <span id="red">{{ contador }}</span></span
+        >
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" style="background-color: white">
+        <button
+          mat-raised-button
+          color="primary"
+          class="montserrat"
+          id="voltar"
+          (click)="goBack()"
+        >
+          Cancelar
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <!-- <div *ngIf="contador > 0"> -->
+  <div class="container">
+    <div *ngIf="blocosFire$ | async; else loading">
+      <div *ngFor="let bloco of blocosFire$ | async as Blocos">
+        <div class="link">
+          <div>
+            <a class="montserrat" href="{{ bloco.linkMyMaps }}" target="_blank">
+              {{ bloco.nome }}
+            </a>
+            <span id="regional" class="montserrat">
+              - ({{ bloco.regional }})</span
+            >
+          </div>
+
+          <button mat-button (click)="findOne(bloco.key)">
+            <span style="font-size: 20px" class="material-symbols-outlined">
+              theater_comedy
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading>
+    <div id="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</mat-card>

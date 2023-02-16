@@ -1,0 +1,62 @@
+@media screen and (mix-width: 0px) and (max-width: 800px) {
+  mat-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 800px) and (max-width: 1000px) {
+  mat-card {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1000px) and (max-width: 2000px) {
+  mat-card {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.three-parts-width {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-card-actions {
+  margin: auto;
+}
+
+mat-toolbar {
+  margin-bottom: 1em;
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.montserrat {
+  font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+#responsavel {
+  width: 46%;
+}
+#linha-dois{
+  display: flex;
+  justify-content: space-between;
+}
+#largura-publico {
+  width: 15%;
+}
+#largura-data{
+  width: 15%;
+}
+.espacamento-desfile{
+  width: 32.5%;
+}
+#tel-responsavel{
+  width: 20%;
+}
+#peso-fonte{
+  font-weight: 300;
+}
