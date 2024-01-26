@@ -49,22 +49,20 @@ export class BlocosListDateRegionalComponent implements OnInit {
       ),
       tap((blocos: Blocos) => (this.contador = blocos.length))
     );
-
-    // this.blocosService
-    //   .listFireDate(this.data)
-    //   .pipe(
-    //     map((blocos) =>
-    //       blocos.filter((bloco: Bloco) => bloco.data === this.data)
-    //     ),
-    //     tap((blocos: Blocos) => (this.contador = blocos.length))
-    //   )
-    //   .subscribe();
   }
 
   findOne(key: string) {
     this.router.navigate(['blocos/details', key]);
   }
 
+  linkMyMaps(link: string) {
+    window.open(link, '_blank');
+  }
+
+  linkDot(link: string) {
+    window.open(link, '_blank');
+  }
+  
   forByRegional(regional: string) {
     this.itemsRef = this.db.list('blocos/');
     this.blocosFire$ = this.itemsRef.snapshotChanges().pipe(

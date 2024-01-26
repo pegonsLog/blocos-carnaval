@@ -54,6 +54,7 @@ a {
 .link {
   background: lightblue;
   margin-bottom: 5px;
+  margin-right: 5px;
   height: 38px;
   color: teal;
   display: flex;
@@ -79,7 +80,7 @@ span {
 
 button {
   color: teal;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   display: flex;
   justify-content: right;
 }
@@ -129,6 +130,10 @@ mat-form-field {
 .button-details {
   background-color: lightblue;
   border: none;
+  padding: 0px;
+  display: flex;
+  justify-content: left;
+  margin-right: 5px;
 }
 mat-toolbar {
   display: flex;
@@ -146,7 +151,8 @@ mat-toolbar {
   background-color: lightblue;
 }
 
-.title {
+#title {
+  font-size: 1.1rem;
   color: white;
 }
 .center-card {
@@ -168,6 +174,8 @@ mat-toolbar {
 #botoes {
   display: flex;
   justify-content: right;
+  align-items: center;
+  padding-right: 0.3em;
 }
 
 #loading-spinner {
@@ -181,4 +189,12 @@ mat-toolbar {
   font-weight: 500;
   color: #0306ba;
   background-color: lightblue;
+}
+#theater_comedy {
+  display: inline-block;
+  justify-content: left;
+  align-items: center;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  font-size: 1rem;
 }

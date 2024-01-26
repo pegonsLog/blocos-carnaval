@@ -52,6 +52,14 @@ export class BlocosListUserComponent implements OnInit, OnDestroy {
     this.router.navigate(['blocos/details', key]);
   }
 
+  myMaps(link: string) {
+    window.open(link, '_blank');
+  }
+
+  linkDot(link: string) {
+    window.open(link);
+  }
+
   forByRegional(regional: string) {
     this.blocosFire$ = this.blocosService.listFire().pipe(
       map((blocos: Blocos) =>

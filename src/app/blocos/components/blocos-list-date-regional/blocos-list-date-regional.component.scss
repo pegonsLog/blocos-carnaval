@@ -18,7 +18,7 @@
 }
 @media (min-width: 800px) and (max-width: 1000px) {
   mat-card {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
   }
   .regionais {
@@ -52,13 +52,14 @@ a {
 }
 
 .link {
-  background: #add8e6;
-  display: flex;
-  justify-content: space-between;
+  background: lightblue;
   margin-bottom: 5px;
-  height: 40px;
+  margin-right: 5px;
+  height: 38px;
   color: teal;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 mat-label {
@@ -76,7 +77,9 @@ mat-grid-tile {
 
 button {
   color: teal;
-  font-size: 12px;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -91,6 +94,8 @@ mat-form-field {
 }
 
 .montserrat {
+  font-size: 0.9rem;
+  font-weight: 300;
   font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -108,7 +113,7 @@ mat-form-field {
   font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;
 }
 #peso-fonte-plus {
-  font-size: 30px;
+  font-size: 0.75rem;
   font-weight: 300;
   color: #fff;
   font-family: Montserrat, Helvetica, Arial, sans-serif;
@@ -116,6 +121,7 @@ mat-form-field {
 .button-details {
   background: lightblue;
   border: none;
+  padding: 0px;
 }
 mat-toolbar {
   margin-bottom: 5px;
@@ -124,16 +130,17 @@ mat-toolbar {
 #voltar {
   width: 120px;
 }
-.geral{
+.geral {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-#white{
+#white {
   color: white;
 }
 
-.title {
+#title {
   color: white;
+  font-size: 1.1rem;
 }
 
 #loading-spinner {
@@ -142,4 +149,19 @@ mat-toolbar {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.15);
+}
+
+#botoes {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding-right: 0.3em;
+}
+#theater_comedy {
+  display: inline-block;
+  justify-content: left;
+  align-items: center;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  font-size: 1.1rem;
 }

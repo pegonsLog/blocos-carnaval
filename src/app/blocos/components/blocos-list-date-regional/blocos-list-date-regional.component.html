@@ -1,6 +1,6 @@
 <mat-card class="mat-elevation-z8">
   <mat-toolbar color="primary" id="peso-fonte">
-    <span class="title">CARNAVAL 2023 - DOT'S e Croquis</span>
+    <span id="title">CARNAVAL 2023 - DOT'S e Croquis</span>
   </mat-toolbar>
 
   <mat-grid-list cols="2" rowHeight="8:2">
@@ -44,19 +44,31 @@
       <div *ngFor="let bloco of blocosFire$ | async as Blocos">
         <div class="link">
           <div>
-            <a class="montserrat" href="{{ bloco.linkMyMaps }}" target="_blank">
+            <button class="button-details" (click)="findOne(bloco.key)">
+              <span id="theater_comedy" class="material-symbols-outlined">
+                theater_comedy
+              </span>
               {{ bloco.nome }}
-            </a>
-            <span id="regional" class="montserrat">
-              - ({{ bloco.regional }})</span
-            >
+              <span id="regional"> - ({{ bloco.regional }})</span>
+            </button>
           </div>
-
-          <button mat-button (click)="findOne(bloco.key)">
-            <span style="font-size: 20px" class="material-symbols-outlined">
-              theater_comedy
-            </span>
-          </button>
+          <div id="botoes">
+            <button
+              class="button-details"
+              *ngIf="bloco.linkMyMaps; else deactiveButton"
+              (click)="linkMyMaps(bloco.linkMyMaps)"
+            >
+              <span style="font-size: 20px" class="material-symbols-outlined">
+                location_on
+              </span>
+            </button>
+            <button class="button-details" (click)="linkDot(bloco.linkDOT)">
+              <span style="font-size: 20px" class="material-symbols-outlined">
+                description
+              </span>
+            </button>
+            <ng-template #deactiveButton></ng-template>
+          </div>
         </div>
       </div>
     </div>

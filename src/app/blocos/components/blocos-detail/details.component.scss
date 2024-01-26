@@ -16,6 +16,9 @@
 }
 
 mat-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: auto;
   margin-top: 20px;
 }
@@ -44,3 +47,10 @@ strong {
   margin-right: 10px;
 }
 
+#semMyMaps {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: red;
+  width: 100px;
+}
