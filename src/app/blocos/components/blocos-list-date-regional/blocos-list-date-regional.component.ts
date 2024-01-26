@@ -20,6 +20,7 @@ export class BlocosListDateRegionalComponent implements OnInit {
   value: string = '';
   regionais: string[] = [];
   data: string = '';
+  dataReduzida = '';
   contador: number = 0;
   bloco: any;
   subscription: Subscription = new Subscription();
@@ -36,13 +37,14 @@ export class BlocosListDateRegionalComponent implements OnInit {
     const navigation = this.router.getCurrentNavigation();
     this.data = navigation?.extras?.state?.['value'];
 
+
     this.itemsRef = this.db.list('blocos/');
     this.blocosFire$ = this.itemsRef.snapshotChanges().pipe(
       map((changes) =>
         changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))
       ),
       map((blocos) =>
-        blocos.filter((bloco: Bloco) => bloco.data === this.data)
+        blocos.filter((bloco: Bloco) => bloco.data.substring(0, 5) === this.data)
       ),
       map((result: any) =>
         result.sort((a: any, b: any) => a.nome.localeCompare(b.nome))
@@ -62,7 +64,7 @@ export class BlocosListDateRegionalComponent implements OnInit {
   linkDot(link: string) {
     window.open(link, '_blank');
   }
-  
+
   forByRegional(regional: string) {
     this.itemsRef = this.db.list('blocos/');
     this.blocosFire$ = this.itemsRef.snapshotChanges().pipe(
@@ -70,7 +72,7 @@ export class BlocosListDateRegionalComponent implements OnInit {
         changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))
       ),
       map((blocos) =>
-        blocos.filter((bloco: Bloco) => bloco.regional === regional && bloco.data === this.data)
+        blocos.filter((bloco: Bloco) => bloco.regional === regional)
       ),
       map((result: any) =>
         result.sort((a: any, b: any) => a.nome.localeCompare(b.nome))
@@ -96,6 +98,7 @@ export class BlocosListDateRegionalComponent implements OnInit {
 
   ngOnInit(): void {
     this.regionais = this.blocosService.regionais();
+
   }
 
   ngOnDestroy(): void {

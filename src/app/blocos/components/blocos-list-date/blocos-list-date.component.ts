@@ -31,7 +31,7 @@ export class BlocosListDateComponent implements OnInit {
 
   forDate(data: string) {
     this.router.navigate(['blocos/date-regional'], { state: { value: data } });
-  }
+   }
 
   goBack(){
     this.location.back();
