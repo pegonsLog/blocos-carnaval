@@ -72,7 +72,7 @@ export class BlocosListDateRegionalComponent implements OnInit {
         changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))
       ),
       map((blocos) =>
-        blocos.filter((bloco: Bloco) => bloco.regional === regional)
+        blocos.filter((bloco: Bloco) => bloco.regional === regional && bloco.data.substring(0, 5) === this.data)
       ),
       map((result: any) =>
         result.sort((a: any, b: any) => a.nome.localeCompare(b.nome))
